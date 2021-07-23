@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{%block title%} This is my awesome website {% endblock%}
+{% block content %}
+<div class="row">
+    {% for post in posts%}
+        <div class="col-sm-6 col-md-3">
+            <div class="card my-4">
+                <br>
+                    {% thumbnail post.image "200x200" crop="center" as im %}
+                        <img src="{{ post.image.url }}" width="{{ im.width }}" height="{{ im.height }}" class="card-img-top">
+                    {% endthumbnail %}
+                </a>
+                <div class="card-body">
+                        <p class="card-text">{{post.text}}</p>
+                        <a href="{% url 'blog:detail' post.id %}" class="btn btn-primary">View Full Post</a>
+                  </div>
+            </div>
+        </div>
+    {% endfor%}
+
+</div>
+{% endblock %}
