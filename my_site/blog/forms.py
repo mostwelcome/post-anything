@@ -2,5 +2,5 @@ from django import forms
 
 
 class PostForms(forms.Form):
-    text = forms.CharField()
     image = forms.FileField()
+    text = forms.CharField(label="Description")

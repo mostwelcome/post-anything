@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{%block title%} Detail view {% endblock%}
+{%block title%} Detailed View {% endblock%}
 
 {% block content %}
-    {{object.text}}<br>
-    Image:
-    <img src="{{object.image.url}} ">
+        <h2>{{object.text}}</h2>
+        <br>
+        <img src="{{object.image.url}} " class="img-fluid rounded " height="1000px" width="1000px">
 
 {% endblock %}

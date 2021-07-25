@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
-{%block title%} This is my awesome website {% endblock%}
+{%block title%} Add Your Post{% endblock%}
 {% block content %}
-<form method="POST" action="" enctype="multipart/form-data">
+<form method="POST" action="" enctype="multipart/form-data" class="col-sn-4 offset-4 py-5 my-5">
+    <h2>Upload new Image</h2>
+
     {% csrf_token %}
     {{form.as_p}}
     <div>
-        <button type="submit">Submit Form</button>
+        <button type="submit" class="btn btn-success btn-lg">Submit Form</button>
     </div>
 
 </form>
